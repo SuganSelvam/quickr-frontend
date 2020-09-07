@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router,	Redirect,	Route,	Switch,} from 'react-router-dom'
 import './App.css';
 
+import Login from "./Components/Login/Login"
+import Register from "./Components/Login/Register"
+
+import Dashboard from "./Components/Dashboard/Dashboard"
+import PostAdvt from "./Components/PostAdv/PostAdvt"
+
+
+
 function App() {
+
+  const [User, setUser] = useState(null)
+  const [IsLoggedIn , setIsLoggedIn] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+				<Switch>          
+					<Route path="/login" component={() => <Login setUser={setUser} setIsLoggedIn={setIsLoggedIn} />} />
+					<Route path="/register" component={Register} />
+          <Route path="/dashboard" component={() => <Dashboard User={User} IsLoggedIn={IsLoggedIn} setIsLoggedIn={setIsLoggedIn} /> } />
+          <Route path="/postadvt" component={() => <PostAdvt User={User} />} />
+          <Redirect from="/" to="/dashboard" />
+				</Switch>
+			</Router>
   );
 }
 

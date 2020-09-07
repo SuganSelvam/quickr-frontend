@@ -1,0 +1,148 @@
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #3f51b5;
+    border-radius: 10px;
+    background: #3f51b5;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.listButton{
+    font-size: 18px;
+    flex: 1 1 0;
+    border: 1px solid #3f51b5;
+}
+
+.listButton:hover{
+    color: #3f51b5;
+    background: white;
+}
+
+.listButton:focus{
+    outline: none;
+    color: #3f51b5;
+    background: white;
+}
+
+input{
+    width: 400px;
+    font-size: 18px;
+}
+input:focus{
+    outline: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #3f51b5;
+}
+
+
+.content{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.left{
+    background: #eeeeee;
+    flex: 1 1 0;
+    text-align: center;
+    padding: 25% 0;
+}
+
+.right{
+    flex: 1 1 0;
+    background: #eeeeee;
+    text-align: center;
+    padding: 25% 0;    
+}
+
+.mid{
+    flex: 2 1 0;
+}
+
+.card {
+    border: 2px solid #3f51b5;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding:10px
+  }
+
+  .cardLine2{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardLine3{
+    margin: 10px 0;
+}
+
+.cardLine4{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.title{
+    margin:10px 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #3f51b5;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.selectSearchBar{
+    margin-right:2px;
+    border: 1px solid #3f51b5;
+    border-radius: 5px;
+}
+
+.Welcome{
+    text-align: center;
+    color: #3f51b5 ;
+    font-size: 25px;
+    font-weight:bold;
+    text-transform: capitalize;
+}
+
+.brand, .model,.price, .details,.condition{
+    text-transform: capitalize;
+    padding-bottom: 5px;
+}
+
+.flexcard{
+    display: flex;
+    justify-content: space-around;
+}
+
+.seller,.email,.phone,.name{
+    color: #3f51b5;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.cardLeft{
+    text-align: center;
+    color: #3f51b5;
+    font-family: monospace;
+    font-size: larger;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex: 1 1 0;
+}
+.cardRight{
+    flex: 2 1 0;
+}

@@ -1,0 +1,26 @@
+#login{
+    background: #eeeeee;
+    border: 2px solid 	#5bc0de;
+    border-radius: 10px;
+    width: 60%;
+    margin: 8% auto;
+    padding:15px;
+}
+
+#register{
+    background: #eeeeee;
+    border: 2px solid 	#5bc0de;
+    border-radius: 10px;
+    width: 60%;
+    margin: 3% auto;
+    padding:15px;
+}
+
+.heading{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 45px;
+}
+
+.hoverText{
+    cursor: pointer;
+}
