@@ -4,7 +4,7 @@ import { useHistory  } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 function Electronics(props) {
-    
+
     let history = useHistory()
 
     const initialState = ""
@@ -25,7 +25,7 @@ function Electronics(props) {
 
     async function handleSubmit(){
         try{
-             await fetch("http://localhost:4040/postadvt/electronics",{
+             await fetch("https://quikr-backend.herokuapp.com/postadvt/electronics",{
                 method:"POST",
                 headers: {"Content-type":"application/json"},
                 body: JSON.stringify({ Brand: Brand,

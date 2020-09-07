@@ -14,24 +14,22 @@ function Dashboard(props) {
 
   async function handleSearch(){
     console.log(search,searchOption)
-    await fetch("http://localhost:4040/getSearch",{
+    await fetch("https://quikr-backend.herokuapp.com/getSearch",{
       method:"POST",
       headers: {"Content-type":"application/json"},
       body: JSON.stringify({search,searchOption})
     }).then(res => res.json()).then(data => { 
       if (data.length === 0) setResultView(`No Result Found for "${search}"`)
       setstate(data); 
-      console.log(data)
     })
   }
 
   async function loadAll() {
     try {
-      await fetch("http://localhost:4040/getAll")
+      await fetch("https://quikr-backend.herokuapp.com/getAll")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
-          console.log(data);
         });
     } catch (error) {
       console.log(error);
@@ -40,7 +38,7 @@ function Dashboard(props) {
 
   async function loadMobiles() {
     try {
-      await fetch("http://localhost:4040/getMobiles")
+      await fetch("https://quikr-backend.herokuapp.com/getMobiles")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
@@ -52,7 +50,7 @@ function Dashboard(props) {
 
   async function loadElectronics() {
     try {
-      await fetch("http://localhost:4040/getElectronics")
+      await fetch("https://quikr-backend.herokuapp.com/getElectronics")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
@@ -64,7 +62,7 @@ function Dashboard(props) {
 
   async function loadVehicles() {
     try {
-      await fetch("http://localhost:4040/getVehicles")
+      await fetch("https://quikr-backend.herokuapp.com/getVehicles")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
@@ -76,7 +74,7 @@ function Dashboard(props) {
 
   async function loadFurnitures() {
     try {
-      await fetch("http://localhost:4040/getFurnitures")
+      await fetch("https://quikr-backend.herokuapp.com/getFurnitures")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
@@ -88,7 +86,7 @@ function Dashboard(props) {
 
   async function loadHousings() {
     try {
-      await fetch("http://localhost:4040/getHousings")
+      await fetch("https://quikr-backend.herokuapp.com/getHousings")
         .then((res) => res.json())
         .then((data) => {
           setstate(data);
@@ -144,7 +142,6 @@ function Dashboard(props) {
           <div className="mid">
             {props.IsLoggedIn === false?<div></div>:<div className="Welcome">Welcome {props.User}</div>}
             {state.length !== 0 ? state.map((item) => {
-              console.log(item.Image)
               return (
                 <div className="card" key={item._id}>
                   <div className="cardLeft">
@@ -164,12 +161,17 @@ function Dashboard(props) {
                         <div className="year"><b>Year : </b>{item.Year}</div>
                       </div>
                       <div className="details"><b>Details : </b><br/> {item.Details} </div>
+                      <div className="cardLine2">
+                        {item.Fuel?<div><b>Fuel : </b>{item.Fuel} </div>:null}
+                        {item.Wheeler?<div><b>Wheeler : </b>{item.Wheeler} </div>:null}
+                        {item.Kilometers?<div><b>Kilometers : </b>{item.Kilometers} </div>:null}
+                      </div>
                     </div>
-                    {props.IsLoggedIn === true ?<div className="cardLine4">
-                      <div className="seller">Seller Details</div>
-                      <div className="email" >Email : {item.Email} </div>
-                      <div className="phone">Phone : {item.Phone}</div>      
-                      <div className="name">Name : {item.Name}</div>                   
+                    {props.IsLoggedIn === true ?<div>
+                        <div className="seller">Seller Details</div>                        
+                        <div className="email" >Email : {item.Email} </div>
+                        <div className="phone">Phone : {item.Phone}</div>      
+                        <div className="name">Name : {item.Name}</div>                
                     </div>:<button onClick={()=>history.push("/login")}> Login To View Seller Details</button>}
                   </div>
                 </div>

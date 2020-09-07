@@ -24,7 +24,7 @@ function Mobile(props) {
     async function handleSubmit(){
         try{
             console.log(Image)
-            await fetch("http://localhost:4040/postadvt/mobiles",{
+            await fetch("https://quikr-backend.herokuapp.com/postadvt/mobiles",{
                 method:"POST",
                 headers: {"Content-type":"application/json"},
                 body: JSON.stringify({ Brand: Brand,

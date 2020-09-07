@@ -13,7 +13,7 @@ function Login(props) {
     async function handleSubmit(e){
         e.preventDefault();
         try{
-            let output = await fetch("http://localhost:4040/login",{
+            let output = await fetch("https://quikr-backend.herokuapp.com/login",{
                 method:"POST",
                 headers: {"Content-type":"application/json"},
                 body: JSON.stringify({Email,Password})            

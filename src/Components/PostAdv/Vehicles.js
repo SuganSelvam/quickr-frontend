@@ -11,8 +11,8 @@ function Vehicles(props) {
   const [Model, setModel] = useState(initialState);
   const [Year, setYear] = useState(initialState);
   const [Kilometers, setKilometers] = useState(initialState);
-  const [Wheeler, setWheeler] = useState(initialState)
-  const [Fuel, setFuel] = useState(initialState)
+  const [Wheeler, setWheeler] = useState("Two")
+  const [Fuel, setFuel] = useState("Petrol")
   const [Title, setTitle] = useState(initialState);
   const [Price, setPrice] = useState(initialState);
   const [Phone, setPhone] = useState(initialState);
@@ -24,7 +24,7 @@ function Vehicles(props) {
 
   async function handleSubmit() {
     try {
-        await fetch("http://localhost:4040/postadvt/vehicles", {
+        await fetch("https://quikr-backend.herokuapp.com/postadvt/vehicles", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({

@@ -20,7 +20,7 @@ function Furnitures(props) {
   
     async function handleSubmit() {
       try {
-        await fetch("http://localhost:4040/postadvt/furnitures", {
+        await fetch("https://quikr-backend.herokuapp.com/postadvt/furnitures", {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({

@@ -20,7 +20,7 @@ function Register({history}) {
 
         } else{
             try{
-                let output = await fetch("http://localhost:4040/register",{
+                let output = await fetch("https://quikr-backend.herokuapp.com/register",{
                     method:"POST",
                     headers: {"Content-type":"application/json"},
                     body: JSON.stringify({FName,LName,Email,Password1})
