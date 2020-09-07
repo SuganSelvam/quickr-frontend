@@ -151,14 +151,17 @@ function Dashboard(props) {
                   <div className="cardRight">                  
                     <div className="title">{item.Title}</div>
                     <div className="cardLine2">
-                      <div className="brand"><b>Brand : </b>{item.Brand}</div>
-                      <div className="model"><b>Model : </b> {item.Model}</div>
+                      {item.Brand ? <div className="brand"><b>Brand : </b>{item.Brand}</div> : null }                      
+                      {item.Model ?<div className="model"><b>Model : </b> {item.Model}</div> : null }
+                      {item.Type ? <div className="model"><b>Type : </b> {item.Type}</div> : null }
                       <div className="price"><b>Price : </b>{item.Price}</div>
                     </div>
                     <div className="cardLine3">
                       <div className="flexcard">
-                        <div className="condition"><b>Condition : </b>{item.Condition}</div>
-                        <div className="year"><b>Year : </b>{item.Year}</div>
+                        {item.Size ? <div className="year"><b>Size : </b>{item.Size}</div> : null}
+                        {item.Condition ?<div className="condition"><b>Condition : </b>{item.Condition}</div>:null}
+                        {item.Year ? <div className="year"><b>Year : </b>{item.Year}</div> : null}
+                        
                       </div>
                       <div className="details"><b>Details : </b><br/> {item.Details} </div>
                       <div className="cardLine2">
@@ -167,7 +170,7 @@ function Dashboard(props) {
                         {item.Kilometers?<div><b>Kilometers : </b>{item.Kilometers} </div>:null}
                       </div>
                     </div>
-                    {props.IsLoggedIn === true ?<div>
+                      {props.IsLoggedIn === true ?<div>
                         <div className="seller">Seller Details</div>                        
                         <div className="email" >Email : {item.Email} </div>
                         <div className="phone">Phone : {item.Phone}</div>      
